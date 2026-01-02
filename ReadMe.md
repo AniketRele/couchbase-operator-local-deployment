@@ -90,4 +90,18 @@ buckets:
   managed: true
 ```
 
+Get couchbase Bucket:
+```bash
+kubectl get couchbasebuckets -n couchbase
+```
+
+Delete any couchbase bucket:
+```bash
+kubectl delete couchbasebucket <-bucketname-> -n couchbase
+```
+
+Add a new Couchbase Bucket:
+```bash
+kubectl apply -f cb-buckets.yaml -n couchbase
+```
 
