@@ -33,8 +33,10 @@ Make sure you have the following installed:
 
 
 Verify:
+```bash
 kubectl get nodes
 helm version
+```
 
 1. Install Couchbase Operator using Helm
 
