@@ -12,6 +12,7 @@ This guide is ideal for:
 * Developers exploring Couchbase Analytics
 
 Architecture Overview:
+```bash
 Docker Desktop
  └── Kubernetes (single-node)
       └── Couchbase Operator
@@ -20,7 +21,7 @@ Docker Desktop
                 ├── Query Service
                 ├── Index Service
                 └── Analytics Service
-
+```
 This setup mirrors how Couchbase is deployed on EKS / AKS / GKE, just scaled down for local use.
 
 
