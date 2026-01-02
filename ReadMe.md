@@ -37,7 +37,15 @@ Make sure you have the following installed:
 Verify:
 ```bash
 kubectl get nodes
-helm version
+```
+Install Helm on 
+Windows:
+```bash
+winget install Helm.Helm
+```
+Mac:
+```bash
+brew install helm
 ```
 
 1. Install Couchbase Operator using Helm
