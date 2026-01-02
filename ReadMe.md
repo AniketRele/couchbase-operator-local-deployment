@@ -40,42 +40,54 @@ helm version
 
 1. Install Couchbase Operator using Helm
 
+```bash
 helm repo add couchbase https://couchbase-partners.github.io/helm-charts/
 helm repo update
+```
 
 Install (or upgrade) the operator:
+```bash
 helm upgrade couchbase-operator couchbase/couchbase-operator \
   --namespace couchbase \
   --install
+```
 
 Verify:
+```bash
 helm list -n couchbase
 kubectl get pods -n couchbase
+```
 
 2. Create Couchbase Admin Secret
 Couchbase will not start without admin credentials.
+```bash
 kubectl create secret generic cb-admin-secret \
   --from-literal=username=Administrator \
   --from-literal=password=Password@123 \
   -n couchbase
-
+```
 
 3. Deploy Couchbase Cluster (Custom Resource)
+```bash
 kubectl apply -f cb-cluster.yaml -n couchbase
 kubectl get pods -n couchbase -w
-
+```
 
 4. Access Couchbase Web Console
+```bash
 kubectl port-forward svc/cb-cluster-ui 8091:8091 -n couchbase
+```
 
-
-Open http://localhost:8091
-
+Open
+```bash
+http://localhost:8091
+```
 Login Using Administrator / Password@123
 
 Understanding Operator-Managed Buckets:
+```bash
 buckets:
   managed: true
-
+```
 
 
