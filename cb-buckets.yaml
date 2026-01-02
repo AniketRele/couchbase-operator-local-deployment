@@ -1,0 +1,9 @@
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: demo
+spec:
+  memoryQuota: 256Mi
+  replicas: 0
+  ioPriority: low
+  evictionPolicy: valueOnly

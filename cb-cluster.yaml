@@ -1,0 +1,29 @@
+apiVersion: couchbase.com/v2
+kind: CouchbaseCluster
+metadata:
+  name: cb-cluster
+spec:
+  image: couchbase/server:7.2.4
+  antiAffinity: false
+  cluster:
+    dataServiceMemoryQuota: 512Mi
+  security:
+    adminSecret: cb-admin-secret
+
+  networking:
+    exposeAdminConsole: true
+    exposedFeatures:
+      - client
+      - admin
+
+  buckets:
+    managed: true
+
+  servers:
+    - name: all-services
+      size: 1
+      services:
+        - data
+        - index
+        - query
+        - analytics
