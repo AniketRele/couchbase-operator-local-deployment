@@ -27,11 +27,12 @@ This setup mirrors how Couchbase is deployed on EKS / AKS / GKE, just scaled dow
 
 Prerequisites:
 Make sure you have the following installed:
+```bash
 * Docker Desktop (Kubernetes enabled)
 * kubectl
 * Helm v3+
 * At least 8 GB RAM allocated to Docker Desktop
-
+```
 
 Verify:
 ```bash
